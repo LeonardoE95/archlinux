@@ -52,7 +52,7 @@ $ loadkeys it
   After this we can start the partitioning process. We can check the
   device driver for the hard-disk with ~fdisk -l~
 
-  #+REVEAL_HTML: <img src="./img/fdisk.png">
+  [[./img/fdisk.png]]
 
   As we can see, in my case the device driver is called ~/dev/vda~. Now,
   depending on the final setup we want, we can make different
@@ -74,11 +74,11 @@ cfdisk /dev/vda
 
   We select the ~gpt~ partition table type
 
-  #+REVEAL_HTML: <img src="./img/partition-table-type.png">
+  [[./img/partition-table-type.png]]
 
   and then we create the partitions
 
-  #+REVEAL_HTML: <img src="./img/cfdisk.png">
+  [[./img/cfdisk.png]]
   
 * 2. File systems
   Once the partitions have been created, we can create the various
@@ -100,7 +100,7 @@ swapon /dev/vda2
 
   Notice that now we can access the filesystem in ~/mnt~.
 
-  #+REVEAL_HTML: <img src="./img/ls-mnt.png">
+  [[./img/ls-mnt.png]]
   
 * 3. System packages
   At this point we can start to setup the initial system
@@ -110,7 +110,7 @@ swapon /dev/vda2
 reflector --verbose -l 10 -n 10 -p http --sort rate --save /etc/pacman.d/mirrorlist
   #+end_src
 
-  #+REVEAL_HTML: <img src="./img/reflector.png">
+  [[./img/reflector.png]]
 
   We then install the core packages and files that make up the
   archlinux distribution with the utility ~pacstrap~.
@@ -187,7 +187,7 @@ echo "hostname" > /etc/hostname
 grub-install --target=i386-pc --recheck /dev/vda
   #+end_src
 
-  #+REVEAL_HTML: <img src="./img/grub-install.png">
+  [[./img/grub-install.png]]
   
   Make config
 
@@ -195,7 +195,7 @@ grub-install --target=i386-pc --recheck /dev/vda
 grub-mkconfig -o /boot/grub/grub.cfg
   #+end_src
 
-  #+REVEAL_HTML: <img src="./img/grub-mkconfig.png">
+  [[./img/grub-mkconfig.png]]
   
 * 7. Profit
   Finally, we can exit from the system, unmount the filesystem and reboot.
@@ -208,4 +208,4 @@ reboot
 
   And that's it! The next time we login we're inside our arch VM.
 
-  #+REVEAL_HTML: <img src="./img/final.png">  
+  [[./img/final.png]]
