@@ -38,7 +38,7 @@ virt-install --name=arch \
 
   At this point we can use ~virt-manager~ to open the following screen
 
-  #+REVEAL_HTML: <img src="./img/start-vm.png">
+  [[./img/start-vm.png]]
   
 * 1. Partitions
   First things first, we set the keyboard layout we're most
