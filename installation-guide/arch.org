@@ -23,6 +23,10 @@ $ sha256sum archlinux-2023.10.14-x86_64.iso
 292269ba9bf8335b6a885921a00d311cdc1dcbe9a1375f297f7f3ecfe31c36a7  archlinux-2023.10.14-x86_64.iso
   #+end_src
 
+  You can check the various digests in the following page
+
+  https://archlinux.org/releng/releases/
+  
   Once we have the iso we can create a VM using ~qemu~ with
   ~virt-install~
 
@@ -107,7 +111,7 @@ swapon /dev/vda2
   packages. First we can use ~reflector~ to filter out the best mirrors.
 
   #+begin_src sh
-reflector --verbose -l 10 -n 10 -p http --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose -l 10 -n 10 -p https --sort rate --save /etc/pacman.d/mirrorlist
   #+end_src
 
   [[./img/reflector.png]]
